@@ -70,14 +70,14 @@ a {
   display: inline-block;
 }
 
-@keyframes flexible {
+/* @keyframes flexible {
   75% {
     transform: scale(1.1);
   }
   100% {
     transform: scaleX(1);
   }
-}
+} */
 
 .favs {
   animation-name: flexible;
@@ -142,8 +142,8 @@ input:focus {
 }
 
 .notification-bell img {
-  height: 30px;
-  width: 40px;
+  height: 40px;
+  width: 50px;
   animation-name: ringing_bell;
   animation-duration: 0.4s;
   animation-timing-function: ease-in-out;
@@ -169,19 +169,19 @@ main {
   padding-bottom: 0rem;
 }
 .carousel {
-	/* position: absolute; */
-	left: 0%;
-	width: 60%;
+  position: relative;
+  /* left: 0%; */
+  width: 60%;
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
   display: flex;
 }
 .carousel img:hover {
-	z-index: 10;
-	box-shadow: 0px 0px 12px 0.1px black;
-	height: 18vw;
-	width: 27vw;
+  z-index: 10;
+  box-shadow: 0px 0px 12px 0.1px black;
+  height: 18vw;
+  width: 27vw;
 }
 
 #slider {
@@ -274,4 +274,108 @@ input[type="radio"]:checked {
 #s5:checked ~ #slide3 {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   transform: translate3d(-40%, 0, -250px);
+}
+.latest-release {
+  position: relative;
+  top: 5vw;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.latest-release-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.latest-release-content div {
+  height: 100px;
+  width: 47%;
+  margin: 5px 0px;
+}
+.card {
+	display: flex;
+	flex-direction: row;
+	transition: box-shadow ease-in-out 0.1s;
+}
+.card:hover {
+	box-shadow: 0px 0px 2px 1px white;
+}
+/* images in the cards of the latest release section */
+.card img {
+	width: 100px;
+	height: 100px;
+	z-index: 1;
+}
+.play-button {
+	width: 100%;
+	height: 65%;
+	position: relative;
+	top: -105%;
+	color: rgba(255, 255, 255, 0);
+	/* note that its opacity will be 0 normally */
+	background-color: rgba(0, 0, 0, 0);
+	font-size: 0px;
+	padding-top: 15%;
+	text-align: center;
+	z-index: 5;
+	transition: all ease-in-out 0.1s;
+}
+.play-button i {
+	padding-top: 45%;
+}
+/* hovering effect for the play button */
+.play-button:hover {
+	color: rgba(255, 255, 255, 0.9);
+	background-color: rgba(0, 0, 0, 0.5);
+}
+/* description of the song in the card, which will contain the song nae and author */
+.song-description {
+	margin: auto 10%;
+}
+/* options is the class for the 3 dots which needs to be clicked to trigger the latest release drop down menu */
+.options {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap-reverse;
+	text-align: right;
+	margin-left: auto;
+	margin-right: 2%;
+	margin-top: 2%;
+}
+.latest-release-dropdown {
+	position: absolute;
+	background-color: darkslateblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	top: 20px;
+	right: 0px;
+	overflow: hidden;
+	z-index: 2;
+	border: 1px solid black;
+	box-shadow: 0px 0px 2px 1px black;
+	transition: all ease-in-out 0.3s;
+}
+.fa-ellipsis-h {
+	cursor: pointer;
+}
+input[type="checkbox"] {
+	display: none;
+}
+/* checking it, will trigger the latest release dropdown */
+input[type="checkbox"]:checked ~ .latest-release-dropdown {
+	width: max-content;
+	height: auto;
+	opacity: 1;
+	padding: 5px;
+}
+/* options in the lastest release drop down */
+.drop-item p {
+	text-align: center;
 }
