@@ -1,8 +1,11 @@
 :root {
-	--background-image: url("media/background_image/3541800.jpg");
-	--jumbotron-color: #141b41;
-	--playlist-items-background-color: #1a1e33;
+	--background-image: url("media/background_image/10881763.jpg");
+	--jumbotron-color: #F0F2F0,#000C40;
+	--playlist-items-background-color: #0F2027,#203A43,#2C5364;
 	--playlist-items-background-color-on-hover: #2e3249;
+}
+h2,h1{
+	color: aqua;
 }
 body {
 	/* background-image: var(--background-image); */
@@ -74,14 +77,14 @@ p {
 	display: inline-block;
 }
 /* animation for favoutites text */
-@keyframes flexible {
+/* @keyframes flexible {
 	75% {
 		transform: scale(1.1);
 	}
 	100% {
 		transform: scaleX(1);
 	}
-}
+} */
 /* favourites text */
 .favs {
 	animation-name: flexible;
@@ -277,18 +280,21 @@ main {
 }
 .btns > button {
 	border: 0px;
-	height: 3vw;
+	height: 2.5vw;
 	width: 10vw;
 	color: white;
 	font-size: 1.2vw;
 }
 /* play button */
+button{
+	font-size: 1rem;
+}
 .btns > button:nth-child(1) {
-	background-image: linear-gradient(-19deg, red 0%, blue 100%);
+	background-image: linear-gradient(aqua,black);
 }
 /* follow button */
 .btns > button:nth-child(2) {
-	background-color: transparent;
+	background-image: linear-gradient(aqua,black);
 }
 /* particular item in the playlist */
 .playlist-item {
